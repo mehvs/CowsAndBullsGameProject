@@ -3,7 +3,18 @@ import java.util.Scanner;
 
 public class CowsAndBulls {
     public static void main(String[] args) {
-        createsOnePlayerGame();
+        System.out.println("[1]Play with one player.\n[2]Play with two players.");
+
+        int gameMode = getsPlayerInput();
+
+        switch (gameMode) {
+            case 1:
+                createsOnePlayerGame();
+                break;
+            case 2:
+                createsTwoPlayerGame();
+                break;
+        }
     }
 
     public static void createsOnePlayerGame() {
@@ -11,7 +22,7 @@ public class CowsAndBulls {
         int computerNumber = generatesRandomNumber();
 
         while (isGameOn) {
-            System.out.println(computerNumber);
+            System.out.print(computerNumber + " Enter number: "); //TODO: need to remove variable.
             int player = getsPlayerInput();
 
             countsCows(player, computerNumber);
@@ -22,6 +33,41 @@ public class CowsAndBulls {
             }
         }
         System.out.println("Congratulations you guessed the number!");
+    }
+
+    public static void createsTwoPlayerGame() {
+        int computerOne = generatesRandomNumber();
+        int computerTwo = generatesRandomNumber();
+        int playerOne = 0;
+        int playerTwo = 0;
+
+        while (true) {
+            System.out.println(computerOne + " " + computerTwo); //TODO: need to remove this statement.
+            System.out.println("Player one turn: ");
+
+            playerOne = getsPlayerInput();
+            countsCows(playerOne, computerOne);
+            System.out.println("There are " + countsBulls(playerOne, computerOne) + " bulls in your number.");
+
+            if (countsBulls(playerOne, computerOne) == 4) {
+                break;
+            }
+
+            System.out.println("Player two turn: ");
+
+            playerTwo = getsPlayerInput();
+            countsCows(playerTwo, computerTwo);
+            System.out.println("There are " + countsBulls(playerTwo, computerTwo) + " bulls in your number.");
+
+            if (countsBulls(playerTwo, computerTwo) == 4) {
+                break;
+            }
+        }
+        if (playerOne == computerOne) {
+            System.out.println("Player one guessed the number!");
+        } else if (playerTwo == computerTwo) {
+            System.out.println("Player two guessed the number!");
+        }
     }
 
     //method that generates four digit number with no repetitive digits
@@ -58,7 +104,6 @@ public class CowsAndBulls {
 
     public static int takesEachDigit(int number, int digit) {
         int numberToReturn = 0;
-
         int tempNumber = number;
 
         int digitOne = tempNumber % 10;
@@ -88,20 +133,12 @@ public class CowsAndBulls {
 
     public static int countsBulls(int numberOne, int numberTwo) {
         int bulls = 0;
-        if ((takesEachDigit(numberOne, 1)) == (takesEachDigit(numberTwo, 1))) {
-            bulls++;
-        }
 
-        if ((takesEachDigit(numberOne, 2)) == (takesEachDigit(numberTwo, 2))) {
-            bulls++;
-        }
+        for (int i = 1; i <= 4; i++) {
 
-        if ((takesEachDigit(numberOne, 3)) == (takesEachDigit(numberTwo, 3))) {
-            bulls++;
-        }
-
-        if ((takesEachDigit(numberOne, 4)) == (takesEachDigit(numberTwo, 4))) {
-            bulls++;
+            if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, i)) {
+                bulls++;
+            }
         }
 
         return bulls;
@@ -109,77 +146,21 @@ public class CowsAndBulls {
 
     public static void countsCows(int numberOne, int numberTwo) {
         int cows = 0;
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 3)) {
-            if (takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
+
+        for (int i = 1; i <= 4; i++) {
+
+            for (int j = 1; j <= 3; j++) {
+
+                if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, j)) {
+
+                    if (takesEachDigit(numberOne, j) != takesEachDigit(numberTwo, j)) {
+                        cows++;
+                    }
+
+                }
             }
         }
 
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 2)) {
-            if (takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 1)) {
-            if (takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 3th digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 2)) {
-            if (takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 1)) {
-            if (takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 2nd digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 3)) {
-            if (takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 1)) {
-            if (takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 1st digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 3)) {
-            if (takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 2)) {
-            if (takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
         System.out.println("There are " + cows + " cows in your number.");
 
     }
@@ -190,6 +171,4 @@ public class CowsAndBulls {
 
         return userInput;
     }
-
-
 }

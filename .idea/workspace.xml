@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c4999ff-2023-4f5b-b0fd-a8d0e0a90edf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cowsandbulls/CowsAndBulls.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cowsandbulls/CowsAndBulls.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cowsandbulls/CowsAndBullsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cowsandbulls/CowsAndBullsTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CowsAndBulls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CowsAndBulls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CowsAndBullsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CowsAndBullsTest.java" afterDir="false" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.CowsAndBullsTest">
+  <component name="RunManager" selected="Application.CowsAndBulls">
     <configuration name="CowsAndBulls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CowsAndBulls" />
       <module name="cowsandbulls" />
@@ -50,8 +51,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CowsAndBullsTest" />
         <item itemvalue="Application.CowsAndBulls" />
+        <item itemvalue="Application.CowsAndBullsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -73,26 +74,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582008207810" />
-    <state width="1877" height="133" key="GridCell.Tab.0.bottom" timestamp="1582710609121">
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom" timestamp="1582726594699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="133" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582710609121" />
-    <state width="1877" height="133" key="GridCell.Tab.0.center" timestamp="1582710609120">
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582726594699" />
+    <state width="1877" height="208" key="GridCell.Tab.0.center" timestamp="1582726594699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="133" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582710609120" />
-    <state width="1877" height="133" key="GridCell.Tab.0.left" timestamp="1582710609120">
+    <state width="1877" height="208" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582726594699" />
+    <state width="1877" height="208" key="GridCell.Tab.0.left" timestamp="1582726594699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="133" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582710609120" />
-    <state width="1877" height="133" key="GridCell.Tab.0.right" timestamp="1582710609120">
+    <state width="1877" height="208" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582726594699" />
+    <state width="1877" height="208" key="GridCell.Tab.0.right" timestamp="1582726594699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="133" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582710609120" />
-    <state x="654" y="486" key="com.intellij.ide.util.TipDialog" timestamp="1582279280620">
+    <state width="1877" height="208" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582726594699" />
+    <state x="654" y="486" key="com.intellij.ide.util.TipDialog" timestamp="1582724720567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="486" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582279280620" />
+    <state x="654" y="486" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582724720567" />
     <state x="342" y="141" key="new project wizard" timestamp="1582279314592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
