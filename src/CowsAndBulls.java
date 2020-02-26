@@ -3,8 +3,18 @@ import java.util.Scanner;
 
 public class CowsAndBulls {
     public static void main(String[] args) {
-        //createsOnePlayerGame();
-        //createsTwoPlayerGame();
+        System.out.println("[1]Play with one player.\n[2]Play with two players.");
+
+        int gameMode = getsPlayerInput();
+
+        switch (gameMode) {
+            case 1:
+                createsOnePlayerGame();
+                break;
+            case 2:
+                createsTwoPlayerGame();
+                break;
+        }
     }
 
     public static void createsOnePlayerGame() {
@@ -12,7 +22,7 @@ public class CowsAndBulls {
         int computerNumber = generatesRandomNumber();
 
         while (isGameOn) {
-            System.out.println(computerNumber);
+            System.out.print(computerNumber + " Enter number: "); //TODO: need to remove variable.
             int player = getsPlayerInput();
 
             countsCows(player, computerNumber);
@@ -31,8 +41,8 @@ public class CowsAndBulls {
         int playerOne = 0;
         int playerTwo = 0;
 
-        while(true){
-            System.out.println(computerOne + " " + computerTwo);
+        while (true) {
+            System.out.println(computerOne + " " + computerTwo); //TODO: need to remove this statement.
             System.out.println("Player one turn: ");
 
             playerOne = getsPlayerInput();
@@ -53,9 +63,9 @@ public class CowsAndBulls {
                 break;
             }
         }
-        if(playerOne == computerOne){
+        if (playerOne == computerOne) {
             System.out.println("Player one guessed the number!");
-        }else if(playerTwo == computerTwo){
+        } else if (playerTwo == computerTwo) {
             System.out.println("Player two guessed the number!");
         }
     }
@@ -94,7 +104,6 @@ public class CowsAndBulls {
 
     public static int takesEachDigit(int number, int digit) {
         int numberToReturn = 0;
-
         int tempNumber = number;
 
         int digitOne = tempNumber % 10;
@@ -125,9 +134,9 @@ public class CowsAndBulls {
     public static int countsBulls(int numberOne, int numberTwo) {
         int bulls = 0;
 
-        for(int i = 1; i <= 4; i++){
+        for (int i = 1; i <= 4; i++) {
 
-            if(takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, i)){
+            if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, i)) {
                 bulls++;
             }
         }
@@ -138,9 +147,9 @@ public class CowsAndBulls {
     public static void countsCows(int numberOne, int numberTwo) {
         int cows = 0;
 
-        for(int i = 1; i <= 4; i++){
+        for (int i = 1; i <= 4; i++) {
 
-            for(int j = 1; j <= 3; j++){
+            for (int j = 1; j <= 3; j++) {
 
                 if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, j)) {
 
@@ -162,6 +171,4 @@ public class CowsAndBulls {
 
         return userInput;
     }
-
-
 }
