@@ -87,20 +87,11 @@ public class CowsAndBullsTest {
 
     public static int countsBulls(int numberOne, int numberTwo){
         int bulls = 0;
-        if ((takesEachDigit(numberOne, 1)) == (takesEachDigit(numberTwo, 1))) {
-            bulls++;
-        }
 
-        if ((takesEachDigit(numberOne, 2)) == (takesEachDigit(numberTwo, 2))) {
-            bulls++;
-        }
-
-        if ((takesEachDigit(numberOne, 3)) == (takesEachDigit(numberTwo, 3))) {
-            bulls++;
-        }
-
-        if ((takesEachDigit(numberOne, 4)) == (takesEachDigit(numberTwo, 4))) {
-            bulls++;
+        for(int i = 1; i <= 4; i++){
+            if(takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, i)){
+                bulls++;
+            }
         }
 
         return bulls;
@@ -108,77 +99,21 @@ public class CowsAndBullsTest {
 
     public static void countsCows(int numberOne, int numberTwo){
         int cows = 0;
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 3)) {
-            if(takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
+        for(int i = 1; i <= 4; i++){
+
+            for(int j = 1; j <= 3; j++){
+
+                if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, j)) {
+
+                    if (takesEachDigit(numberOne, j) != takesEachDigit(numberTwo, j)) {
+                        cows++;
+                    }
+
+                }
             }
         }
 
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 2)) {
-            if(takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
 
-        if (takesEachDigit(numberOne, 4) == takesEachDigit(numberTwo, 1)) {
-            if(takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 3th digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 2)) {
-            if (takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 3) == takesEachDigit(numberTwo, 1)) {
-            if (takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 2nd digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 3)) {
-            if (takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 2) == takesEachDigit(numberTwo, 1)) {
-            if (takesEachDigit(numberOne, 1) != takesEachDigit(numberTwo, 1)) {
-                cows++;
-            }
-        }
-        //checking if the 1st digit is matching with any of the rest and adds to cows' counter
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 4)) {
-            if (takesEachDigit(numberOne, 4) != takesEachDigit(numberTwo, 4)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 3)) {
-            if (takesEachDigit(numberOne, 3) != takesEachDigit(numberTwo, 3)) {
-                cows++;
-            }
-        }
-
-        if (takesEachDigit(numberOne, 1) == takesEachDigit(numberTwo, 2)) {
-            if (takesEachDigit(numberOne, 2) != takesEachDigit(numberTwo, 2)) {
-                cows++;
-            }
-        }
         System.out.println("There are " + cows +" cows in your number.");
 
     }
