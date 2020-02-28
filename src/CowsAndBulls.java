@@ -22,7 +22,7 @@ public class CowsAndBulls {
         int computerNumber = generatesRandomNumber();
 
         while (isGameOn) {
-            System.out.print(computerNumber + " Enter number: "); //TODO: need to remove variable.
+            System.out.print("Please enter four digit number: ");
             int player = getsPlayerInput();
 
             countsCows(player, computerNumber);
@@ -42,8 +42,8 @@ public class CowsAndBulls {
         int playerTwo = 0;
 
         while (true) {
-            System.out.println(computerOne + " " + computerTwo); //TODO: need to remove this statement.
-            System.out.println("Player one turn: ");
+
+            System.out.print("[PLAYER 1]It's your turn. Please enter four digit number: ");
 
             playerOne = getsPlayerInput();
             countsCows(playerOne, computerOne);
@@ -53,7 +53,7 @@ public class CowsAndBulls {
                 break;
             }
 
-            System.out.println("Player two turn: ");
+            System.out.print("[PLAYER 2]It's your turn. Please enter four digit number: ");
 
             playerTwo = getsPlayerInput();
             countsCows(playerTwo, computerTwo);
@@ -63,11 +63,13 @@ public class CowsAndBulls {
                 break;
             }
         }
+
         if (playerOne == computerOne) {
             System.out.println("Player one guessed the number!");
         } else if (playerTwo == computerTwo) {
             System.out.println("Player two guessed the number!");
         }
+
     }
 
     //method that generates four digit number with no repetitive digits
@@ -149,7 +151,7 @@ public class CowsAndBulls {
 
         for (int i = 1; i <= 4; i++) {
 
-            for (int j = 1; j <= 3; j++) {
+            for (int j = 1; j <= 4; j++) {
 
                 if (takesEachDigit(numberOne, i) == takesEachDigit(numberTwo, j)) {
 
